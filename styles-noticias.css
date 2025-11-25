@@ -1,0 +1,225 @@
+/*
+ * VARIABLES DE COLOR
+ */
+:root {
+    --color-primary: #a123a1; /* Magenta principal */
+    --color-accent: #fcd900; /* Amarillo del botón "Pedir Ayuda" */
+    --color-text-light: #fff;
+    --color-text-dark: #333;
+    --color-background: var(--color-primary);
+}
+
+/* Base y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* --- Header y Botones (Reutilizados) --- */
+
+.main-header {
+    background-color: var(--color-primary);
+    padding: 10px 0;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.top-nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-top-right {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+.news-btn {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    margin-top: 15px;
+}
+
+/* --- Sección de Noticias --- */
+.news-header {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.news-header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.news-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Imagen 1/3, Contenido 2/3 */
+    gap: 30px;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-image {
+    height: 100%;
+    min-height: 180px; /* Altura mínima para asegurar que las imágenes se vean */
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    display: block;
+}
+
+.news-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.news-content p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Alternar orden para la Noticia 2 (Imagen a la Derecha) */
+.news-right {
+    grid-template-columns: 2fr 1fr; /* Contenido 2/3, Imagen 1/3 */
+}
+.news-right .news-image {
+    order: 2; /* Mueve la imagen a la segunda columna */
+}
+.news-right .news-content {
+    order: 1; /* Mueve el contenido a la primera columna */
+}
+
+
+/* --- Pie de Página (Reutilizado) --- */
+.main-footer {
+    padding: 20px 10px;
+    text-align: center;
+    background-color: var(--color-primary);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-logos .logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+/*
+ * #################################
+ * ### MEDIA QUERY: VISTA MÓVIL (600px o menos) ###
+ * #################################
+ */
+@media (max-width: 600px) {
+    
+    /* Adaptación del Header */
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .top-nav {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .top-nav ul {
+        justify-content: space-around;
+    }
+    .btn-top-right {
+        align-self: flex-end;
+    }
+
+    .news-header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Noticias: Pasa a una sola columna */
+    .news-block {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px 0;
+    }
+    
+    /* En móvil, la imagen SIEMPRE va primero (arriba) */
+    .news-image {
+        order: 0 !important;
+        min-height: 150px;
+    }
+    
+    /* El contenido siempre va debajo de la imagen en móvil */
+    .news-content {
+        order: 1 !important; 
+    }
+    
+    .news-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    /* El botón se centra en móvil */
+    .news-btn {
+        align-self: flex-start;
+    }
+    
+    /* Footer logos se apilan */
+    .footer-logos {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

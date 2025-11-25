@@ -1,0 +1,313 @@
+/*
+ * VARIABLES DE COLOR
+ * Mantenemos el mismo color magenta principal
+ */
+:root {
+    --color-primary: #a123a1; /* Magenta o Morado oscuro principal */
+    --color-accent: #fcd900; /* Amarillo del botón "Pedir Auxilio" */
+    --color-text-light: #fff;
+    --color-text-dark: #333;
+    --color-background: var(--color-primary);
+}
+
+/* Base y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* --- Header y Botones (Reutilizados) --- */
+
+.main-header {
+    background-color: var(--color-primary);
+    padding: 10px 0;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.top-nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-top-right {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+.primary-btn {
+    background-color: #000;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    padding: 12px 25px;
+    margin-bottom: 20px;
+}
+
+.secondary-btn {
+    background-color: #000;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+/* --- Bloque Principal / Cabecera con Ilustración --- */
+.hero-illustration {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.hero-illustration h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.hero-illustration p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.illustration-container {
+    background-color: #903090; /* Fondo magenta más oscuro para la ilustración */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.illustration-container img {
+    /* Aquí debes usar tu imagen real de la ilustración */
+    width: 100%;
+    max-width: 600px; /* Limita el tamaño de la ilustración en escritorio */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- Bloque Formas De Denunciar --- */
+.denuncia-forms {
+    text-align: center;
+    padding: 50px 0 40px;
+}
+
+.denuncia-forms h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.forms-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+    gap: 20px;
+}
+
+.denuncia-card {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1); /* Ligero fondo oscuro para destacar */
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.denuncia-card img {
+    width: 100%;
+    height: auto;
+    max-height: 120px; /* Limita el alto de la imagen de la tarjeta */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.method-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.method-detail {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* --- Bloque Puntos Violeta y App --- */
+.puntos-violeta-app {
+    padding: 40px 0;
+}
+
+.puntos-violeta-app h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.violeta-description {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.app-content-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Imágenes ligeramente más anchas que el texto */
+    gap: 30px;
+    align-items: center;
+}
+
+.app-images {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    height: 450px; /* Define una altura fija para el contenedor de imágenes */
+}
+
+.app-images img {
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+    width: auto;
+}
+.app-images img:nth-child(1) {
+    z-index: 1;
+    left: 0;
+}
+.app-images img:nth-child(2) {
+    z-index: 2;
+    transform: translateX(20%); /* Desplazar la segunda imagen ligeramente */
+}
+
+.app-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.app-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.app-info img {
+    width: 100%;
+    max-width: 200px; /* Tamaño del teléfono de la derecha */
+    height: auto;
+    margin: 20px 0;
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    padding: 20px 10px;
+    text-align: center;
+    background-color: var(--color-primary);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-logos .logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+/*
+ * #################################
+ * ### MEDIA QUERY: VISTA MÓVIL (768px o menos) ###
+ * #################################
+ */
+@media (max-width: 768px) {
+    
+    /* Adaptación del Header */
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .top-nav {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .top-nav ul {
+        justify-content: space-around;
+    }
+    .btn-top-right {
+        align-self: flex-end;
+    }
+
+    /* Denuncia forms: Pasa a una sola columna */
+    .forms-container {
+        grid-template-columns: 1fr; 
+    }
+
+    /* App Puntos Violeta: Pasa a una sola columna */
+    .app-content-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* En móvil, las imágenes de la app se apilan y el texto se centra */
+    .app-images {
+        height: 350px; /* Reducir altura en móvil */
+        justify-content: center;
+    }
+    .app-images img:nth-child(2) {
+        transform: translateX(10%); /* Desplazamiento más pequeño */
+    }
+    
+    .app-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Footer logos se apilan */
+    .footer-logos {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,240 @@
+/*
+ * VARIABLES DE COLOR (Las mismas que las páginas anteriores)
+ */
+:root {
+    --color-primary: #a123a1; /* Magenta o Morado oscuro principal */
+    --color-accent: #fcd900; /* Amarillo del botón "Pedir Ayuda" */
+    --color-text-light: #fff;
+    --color-text-dark: #333;
+    --color-background: var(--color-primary);
+    --color-case-bg: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente para los casos */
+}
+
+/* Base y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* --- Header y Botones (Reutilizados) --- */
+
+.main-header {
+    background-color: var(--color-primary);
+    padding: 10px 0;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.top-nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-top-right {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+/* --- Bloque Definición y Esquema --- */
+.definition-section {
+    padding: 40px 0;
+    display: flex; /* Usamos flexbox para la distribución horizontal */
+    gap: 30px;
+    align-items: center;
+}
+
+.schema-container {
+    flex: 0 0 400px; /* Ancho fijo para el esquema en escritorio */
+}
+
+.schema-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-container {
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+.text-container h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.text-container p {
+    font-size: 1rem;
+}
+
+/* --- Bloque Casos Reales --- */
+.casos-reales-section {
+    padding: 40px 0;
+}
+
+.casos-reales-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en escritorio */
+    gap: 20px;
+}
+
+.case-card {
+    background-color: var(--color-case-bg);
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.case-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.case-card p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-style: italic;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio */
+}
+
+.case-btn {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    align-self: flex-start; /* Alinea el botón a la izquierda de la tarjeta */
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    padding: 20px 10px;
+    text-align: center;
+    background-color: var(--color-primary);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-logos .logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+/*
+ * #################################
+ * ### MEDIA QUERY: VISTA MÓVIL ###
+ * #################################
+ */
+@media (max-width: 850px) {
+    /* El bloque de Definición pasa a ser vertical */
+    .definition-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .schema-container {
+        flex: auto;
+        max-width: 100%; /* Permite que el esquema ocupe todo el ancho */
+    }
+    
+    .text-container {
+        padding: 0;
+    }
+
+    .text-container h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+    /* Adaptación del Header */
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .top-nav {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .top-nav ul {
+        justify-content: space-around;
+    }
+    .btn-top-right {
+        align-self: flex-end;
+    }
+
+    /* Casos Reales: Pasa a una sola columna */
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* El botón se centra en móvil */
+    .case-btn {
+        align-self: center; 
+    }
+    
+    /* Footer logos se apilan */
+    .footer-logos {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

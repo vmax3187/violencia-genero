@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Denuncia Anónima</title>
+    <link rel="stylesheet" href="styles-form.css"> 
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="index.html">Asociación "vidas libres"</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="educacion.html">Protocolos/Actuación</a></li>
+                    <li><a href="denuncias.html">Testimonios Víctimas</a></li>
+                </ul>
+            </nav>
+            <a href="denuncias.html" class="btn btn-top-right">Pedir Auxilio</a>
+        </div>
+    </header>
+    <main class="main-content">
+        
+        <section class="form-header-section">
+            <h1>Reportar Un Caso: Tu Seguridad Es Nuestra Prioridad</h1>
+            <p>Este formulario es confidencial y está diseñado para recabar información crucial. No estás obligado/a a dar tus datos personales.</p>
+        </section>
+
+        <section class="denuncia-form-container">
+            <form action="#" method="POST" class="report-form">
+                
+                <fieldset>
+                    <legend>1. Información sobre el Caso</legend>
+                    
+                    <div class="form-group">
+                        <label for="persona">Usted recibio este abuso? <input type="checkbox" value="victima"></label>
+
+                        <label for="tipo_violencia">Tipo de Violencia Principal:</label>
+                        <select id="tipo_violencia" name="tipo_violencia" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="fisica">Física</option>
+                            <option value="psicologica">Psicológica</option>
+                            <option value="sexual">Sexual</option>
+                            <option value="otra">Otra / No estoy seguro/a</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fecha_incidente">Fecha Aproximada del Último Incidente:</label>
+                        <input type="date" id="fecha_incidente" name="fecha_incidente">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicación (Municipio/Código Postal):</label>
+                        <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Sevilla, 41001">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="descripcion">Descripción del Incidente (Sé lo más detallado posible):</label>
+                        <textarea id="descripcion" name="descripcion" rows="6" required></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Información de Contacto (Opcional y Confidencial)</legend>
+                    
+                    <div class="form-group">
+                        <label for="nombre">Tu Nombre (Opcional):</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email o Teléfono (Para seguimiento, Opcional):</label>
+                        <input type="text" id="email" name="email">
+                    </div>
+
+                    <div class="form-group full-width checkbox-group">
+                        <input type="checkbox" id="anonimo" name="anonimo">
+                        <label for="anonimo">Deseo que esta denuncia sea tratada como **anónima**.</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn submit-btn">Enviar Reporte Confidencial</button>
+            </form>
+        </section>
+        
+        <section class="emergency-contact-section">
+            <h2>¿Necesitas Ayuda Inmediata? Llama Ahora:</h2>
+            <div class="emergency-numbers">
+                <p>📞 **016** (Asesoramiento)</p>
+                <p>📞 **112** (Emergencias)</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="main-footer">
+        <p>Videos Libres</p>
+        <div class="footer-icons">
+            <span class="icon">V</span><span class="icon">T</span><span class="icon">I</span>
+        </div>
+        <div class="footer-logos">
+            <img src="placeholder_logo1.png" alt="Logo de iesjacaranda" class="logo">
+            <img src="placeholder_logo2.png" alt="Logo de Junta de Andalucía" class="logo">
+        </div>
+    </footer>
+
+</body>
+</html>
