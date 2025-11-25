@@ -1,16 +1,13 @@
-/*
- * VARIABLES DE COLOR (Las mismas que las páginas anteriores)
- */
+
 :root {
-    --color-primary: #a123a1; /* Magenta o Morado oscuro principal */
-    --color-accent: #fcd900; /* Amarillo del botón "Pedir Ayuda" */
+    --color-primary: #a123a1;
+    --color-accent: #fcd900; 
     --color-text-light: #fff;
     --color-text-dark: #333;
     --color-background: var(--color-primary);
-    --color-case-bg: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente para los casos */
+    --color-case-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* Base y Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,7 +27,6 @@ body {
     padding: 0 10px;
 }
 
-/* --- Header y Botones (Reutilizados) --- */
 
 .main-header {
     background-color: var(--color-primary);
@@ -78,16 +74,15 @@ body {
     padding: 5px 10px;
 }
 
-/* --- Bloque Definición y Esquema --- */
 .definition-section {
     padding: 40px 0;
-    display: flex; /* Usamos flexbox para la distribución horizontal */
+    display: flex; 
     gap: 30px;
     align-items: center;
 }
 
 .schema-container {
-    flex: 0 0 400px; /* Ancho fijo para el esquema en escritorio */
+    flex: 0 0 400px; 
 }
 
 .schema-container img {
@@ -110,7 +105,6 @@ body {
     font-size: 1rem;
 }
 
-/* --- Bloque Casos Reales --- */
 .casos-reales-section {
     padding: 40px 0;
 }
@@ -122,7 +116,7 @@ body {
 
 .cases-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en escritorio */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -144,7 +138,7 @@ body {
     font-size: 0.95rem;
     margin-bottom: 15px;
     font-style: italic;
-    flex-grow: 1; /* Permite que el párrafo ocupe el espacio */
+    flex-grow: 1; 
 }
 
 .case-btn {
@@ -152,10 +146,9 @@ body {
     color: var(--color-primary);
     font-size: 0.8rem;
     padding: 8px 15px;
-    align-self: flex-start; /* Alinea el botón a la izquierda de la tarjeta */
+    align-self: flex-start; 
 }
 
-/* --- Pie de Página --- */
 .main-footer {
     padding: 20px 10px;
     text-align: center;
@@ -177,13 +170,7 @@ body {
 }
 
 
-/*
- * #################################
- * ### MEDIA QUERY: VISTA MÓVIL ###
- * #################################
- */
 @media (max-width: 850px) {
-    /* El bloque de Definición pasa a ser vertical */
     .definition-section {
         flex-direction: column;
         text-align: center;
@@ -192,7 +179,7 @@ body {
     
     .schema-container {
         flex: auto;
-        max-width: 100%; /* Permite que el esquema ocupe todo el ancho */
+        max-width: 100%; 
     }
     
     .text-container {
@@ -206,7 +193,6 @@ body {
 
 
 @media (max-width: 600px) {
-    /* Adaptación del Header */
     .header-content {
         flex-direction: column;
         align-items: flex-start;
@@ -222,17 +208,14 @@ body {
         align-self: flex-end;
     }
 
-    /* Casos Reales: Pasa a una sola columna */
     .cases-grid {
         grid-template-columns: 1fr;
     }
     
-    /* El botón se centra en móvil */
     .case-btn {
         align-self: center; 
     }
     
-    /* Footer logos se apilan */
     .footer-logos {
         flex-direction: column;
         gap: 10px;

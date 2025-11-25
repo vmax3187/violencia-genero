@@ -1,14 +1,11 @@
-/*
- * VARIABLES DE COLOR
- */
+
 :root {
-    --color-primary: #a123a1; /* Magenta principal */
-    --color-accent: #fcd900; /* Amarillo del botón "Pedir Ayuda" */
+    --color-primary: #a123a1;
+    --color-accent: #fcd900;
     --color-text-light: #fff;
     --color-background: var(--color-primary);
 }
 
-/* Base y Reset (igual que páginas anteriores) */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,7 +25,6 @@ body {
     padding: 0 10px;
 }
 
-/* --- Header y Botones --- */
 .main-header {
     background-color: var(--color-primary);
     padding: 10px 0;
@@ -47,7 +43,6 @@ body {
 .btn-top-right { background-color: var(--color-accent); color: var(--color-primary); font-size: 0.75rem; padding: 5px 10px; }
 .peques-btn { background-color: var(--color-accent); color: var(--color-primary); font-size: 0.8rem; padding: 8px 15px; }
 
-/* --- Bloque Principal de Educación --- */
 .educacion-intro {
     padding: 40px 0;
     display: flex;
@@ -74,7 +69,6 @@ body {
     display: block;
 }
 
-/* --- Bloque Como Educar A Los Mas Pequeños --- */
 .educacion-peques {
     padding: 40px 0;
 }
@@ -112,7 +106,6 @@ body {
     font-size: 1rem;
 }
 
-/* Alineación para el segundo bloque (Texto a la derecha) */
 .block-left-align {
     flex-direction: row-reverse;
 }
@@ -121,7 +114,6 @@ body {
     text-align: right;
 }
 
-/* --- Pie de Página (igual que páginas anteriores) --- */
 .main-footer {
     padding: 20px 10px;
     text-align: center;
@@ -141,13 +133,9 @@ body {
 }
 
 
-/*
- * #################################
- * ### MEDIA QUERY: VISTA MÓVIL ###
- * #################################
- */
+
 @media (max-width: 850px) {
-    /* Bloque Intro */
+
     .educacion-intro {
         flex-direction: column;
         text-align: center;
@@ -156,12 +144,10 @@ body {
         flex: auto;
     }
 
-    /* Bloque Pequeños */
     .peques-block {
-        flex-direction: column; /* Apila imagen y texto */
+        flex-direction: column;
     }
-    
-    /* Restaura la alineación del texto a la izquierda en móvil */
+
     .block-left-align {
         flex-direction: column;
     }
@@ -174,12 +160,11 @@ body {
         text-align: left;
     }
     .peques-image {
-        order: -1; /* Mueve la imagen arriba del texto en móvil */
+        order: -1;
     }
 }
 
 @media (max-width: 600px) {
-    /* Adaptación del Header */
     .header-content { flex-direction: column; align-items: flex-start; }
     .top-nav { width: 100%; margin-bottom: 10px; }
     .top-nav ul { justify-content: space-around; }
@@ -187,7 +172,5 @@ body {
     
     .educacion-intro h1 { font-size: 1.5rem; }
     .educacion-peques h2 { font-size: 1.3rem; }
-    
-    /* Footer logos se apilan */
     .footer-logos { flex-direction: column; gap: 10px; }
 }

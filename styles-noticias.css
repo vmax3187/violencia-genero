@@ -1,15 +1,12 @@
-/*
- * VARIABLES DE COLOR
- */
+
 :root {
-    --color-primary: #a123a1; /* Magenta principal */
-    --color-accent: #fcd900; /* Amarillo del botón "Pedir Ayuda" */
+    --color-primary: #a123a1;
+    --color-accent: #fcd900; 
     --color-text-light: #fff;
     --color-text-dark: #333;
     --color-background: var(--color-primary);
 }
 
-/* Base y Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,7 +26,6 @@ body {
     padding: 0 10px;
 }
 
-/* --- Header y Botones (Reutilizados) --- */
 
 .main-header {
     background-color: var(--color-primary);
@@ -85,7 +81,6 @@ body {
     margin-top: 15px;
 }
 
-/* --- Sección de Noticias --- */
 .news-header {
     text-align: center;
     padding: 40px 0 20px;
@@ -98,7 +93,7 @@ body {
 
 .news-block {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Imagen 1/3, Contenido 2/3 */
+    grid-template-columns: 1fr 2fr; 
     gap: 30px;
     align-items: center;
     padding: 30px 0;
@@ -107,14 +102,14 @@ body {
 
 .news-image {
     height: 100%;
-    min-height: 180px; /* Altura mínima para asegurar que las imágenes se vean */
+    min-height: 180px;
     overflow: hidden;
 }
 
 .news-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    object-fit: cover; 
     display: block;
 }
 
@@ -129,19 +124,17 @@ body {
     opacity: 0.9;
 }
 
-/* Alternar orden para la Noticia 2 (Imagen a la Derecha) */
 .news-right {
-    grid-template-columns: 2fr 1fr; /* Contenido 2/3, Imagen 1/3 */
+    grid-template-columns: 2fr 1fr; 
 }
 .news-right .news-image {
-    order: 2; /* Mueve la imagen a la segunda columna */
+    order: 2; 
 }
 .news-right .news-content {
-    order: 1; /* Mueve el contenido a la primera columna */
+    order: 1;
 }
 
 
-/* --- Pie de Página (Reutilizado) --- */
 .main-footer {
     padding: 20px 10px;
     text-align: center;
@@ -163,14 +156,9 @@ body {
 }
 
 
-/*
- * #################################
- * ### MEDIA QUERY: VISTA MÓVIL (600px o menos) ###
- * #################################
- */
+
 @media (max-width: 600px) {
     
-    /* Adaptación del Header */
     .header-content {
         flex-direction: column;
         align-items: flex-start;
@@ -190,20 +178,17 @@ body {
         font-size: 1.5rem;
     }
 
-    /* Noticias: Pasa a una sola columna */
     .news-block {
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 20px 0;
     }
     
-    /* En móvil, la imagen SIEMPRE va primero (arriba) */
     .news-image {
         order: 0 !important;
         min-height: 150px;
     }
     
-    /* El contenido siempre va debajo de la imagen en móvil */
     .news-content {
         order: 1 !important; 
     }
@@ -212,12 +197,10 @@ body {
         font-size: 1.1rem;
     }
     
-    /* El botón se centra en móvil */
     .news-btn {
         align-self: flex-start;
     }
     
-    /* Footer logos se apilan */
     .footer-logos {
         flex-direction: column;
         gap: 10px;
